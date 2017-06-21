@@ -10,10 +10,12 @@ export class UserService {
   currentUser: User;
 
   constructor(private http: Http) {
-    if (localStorage.getItem('currentUser')) {
-      let user = JSON.parse(localStorage.getItem('currentUser'));
-      // User exists, set it to the current user var
-      this.currentUser = new User(user.firstname, user.lastname, user.email, user.password);
+    if (typeof window !== 'undefined') {
+      if (localStorage && localStorage.getItem('currentUser')) {
+        let user = JSON.parse(localStorage.getItem('currentUser'));
+        // User exists, set it to the current user var
+        this.currentUser = new User(user.firstname, user.lastname, user.email, user.password);
+      }
     }
   }
 
@@ -52,6 +54,8 @@ export class UserService {
 
   doLogout() {
     this.currentUser = null;
-    localStorage.removeItem('currentUser');
+    if (typeof window !== 'undefined') {
+      (localStorage) && localStorage.removeItem('currentUser');
+    }
   }
 }

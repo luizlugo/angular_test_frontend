@@ -7,7 +7,8 @@ export class NormalUserGuard implements CanActivate {
   }
 
   canActivate() {
-    if (!localStorage.getItem('currentUser')) {
+  	// No local storage means that it is not ready onto the client
+    if (typeof window === 'undefined' || !localStorage || !localStorage.getItem('currentUser')) {
       return true;
     } else {
       return false;

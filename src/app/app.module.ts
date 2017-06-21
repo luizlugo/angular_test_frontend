@@ -1,5 +1,5 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import {Routes, RouterModule} from '@angular/router';
@@ -28,10 +28,10 @@ import { HomeComponent } from './home/home.component';
     HomeComponent
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({appId: 'test-seo-pre'}),
     FormsModule,
     HttpModule,
-    RouterModule.forRoot(AppRoutes.routes, {useHash: true})
+    RouterModule.forRoot(AppRoutes.routes)
   ],
   providers: [UserService, LoginGuard, NormalUserGuard],
   bootstrap: [AppComponent]
