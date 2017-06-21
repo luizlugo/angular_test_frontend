@@ -5,7 +5,7 @@ import 'rxjs/add/operator/toPromise';
 
 @Injectable()
 export class UserService {
-  apiUrl: string = "http://localhost:3000/";
+  apiUrl: string = "http://localhost:4000/";
   private headers = new Headers({'Content-Type': 'application/json'});
   currentUser: User;
 
@@ -30,8 +30,12 @@ export class UserService {
       .toPromise()
       .then((response) => {
         var user = response.json().user;
-        // Creates instance of current user
-        this.currentUser = new User(user.firstname, user.lastname, user.email, user.password);
+
+        if (user) {
+          // Creates instance of current user
+          this.currentUser = new User(user.firstname, user.lastname, user.email, user.password);
+        }
+
         resolve(response.json());
       })
       .catch(this.handleError);
@@ -45,7 +49,12 @@ export class UserService {
       .toPromise()
       .then((response) => {
         var user = response.json().user;
-        this.currentUser = new User(user.firstname, user.lastname, user.email, user.password);
+
+        if (user) {
+          // Creates instance of current user
+          this.currentUser = new User(user.firstname, user.lastname, user.email, user.password);
+        }
+        
         resolve(response.json());
       })
       .catch(this.handleError);
