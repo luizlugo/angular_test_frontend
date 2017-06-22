@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {Image} from '../CustomClass/Image';
+import {Image} from '../customclass/image';
 
 @Component({
   selector: 'app-slider',

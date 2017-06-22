@@ -1,6 +1,6 @@
 import {Component, Input, DoCheck} from '@angular/core';
-import {User} from '../CustomClass/User';
-import {UserService} from '../Services/user.service';
+import {User} from '../customclass/user';
+import {UserService} from '../services/user.service';
 import {Router} from '@angular/router';
 
 @Component({

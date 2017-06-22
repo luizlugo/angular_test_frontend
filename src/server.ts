@@ -10,11 +10,17 @@ import { join } from 'path';
 var userService = require('./api/Services/User/');
 var bodyParser  = require('body-parser');
 
-const PORT = 4000;
+var port = process.env.PORT || 3000;
 
 enableProdMode();
 
 const app = express();
+
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
 
 // set body parser to manage the request bodies
 app.use(bodyParser.json());       // to support JSON-encoded bodies
@@ -44,6 +50,6 @@ app.get('*', (req, res) => {
   res.render('index', { req });
 });
 
-app.listen(PORT, () => {
-  console.log(`listening on http://localhost:${PORT}!`);
+app.listen(port, () => {
+  console.log(`listening on http://localhost:${port}!`);
 });

@@ -14,7 +14,7 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { FooterComponent } from './footer/footer.component';
-import { UserService } from './Services/user.service';
+import { UserService } from './services/user.service';
 import { HomeComponent } from './home/home.component';
 
 @NgModule({
