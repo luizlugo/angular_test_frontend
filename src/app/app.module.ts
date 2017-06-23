@@ -16,6 +16,7 @@ import { SignupComponent } from './signup/signup.component';
 import { FooterComponent } from './footer/footer.component';
 import { UserService } from './services/user.service';
 import { HomeComponent } from './home/home.component';
+import { LandingComponent } from './landing/landing.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { HomeComponent } from './home/home.component';
     LoginComponent,
     SignupComponent,
     FooterComponent,
-    HomeComponent
+    HomeComponent,
+    LandingComponent
   ],
   imports: [
     BrowserModule.withServerTransition({appId: 'test-seo-pre'}),

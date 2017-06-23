@@ -7,10 +7,11 @@ export class LoginGuard implements CanActivate {
   }
 
   canActivate() {
+    // No local storage means that it is not on the client
     if (typeof window !== 'undefined' && localStorage && localStorage.getItem('currentUser')) {
       return true;
     } else {
-      this.route.navigate(['login']);
+      this.route.navigate(['landing']);
       return false;
     }
   }

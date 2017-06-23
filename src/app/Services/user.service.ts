@@ -2,10 +2,11 @@ import {Injectable} from '@angular/core';
 import {User} from '../customclass/user';
 import {Http, Headers} from '@angular/http';
 import 'rxjs/add/operator/toPromise';
+import {environment} from '../../environments/environment';
 
 @Injectable()
 export class UserService {
-  apiUrl: string = "http://52.24.213.108:8081/";
+  apiUrl: string = environment.api_url;
   private headers = new Headers({'Content-Type': 'application/json'});
   currentUser: User;
 

@@ -15,7 +15,7 @@ export class NavBarComponent implements DoCheck{
 
   doLogout() {
     this.userService.doLogout();
-    this.router.navigate(['login']);
+    this.router.navigate(['landing']);
   }
 
   ngDoCheck() {

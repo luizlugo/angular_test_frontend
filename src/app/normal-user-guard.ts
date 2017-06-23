@@ -7,10 +7,11 @@ export class NormalUserGuard implements CanActivate {
   }
 
   canActivate() {
-  	// No local storage means that it is not ready onto the client
+  	// No local storage means that it is not on the client
     if (typeof window === 'undefined' || !localStorage || !localStorage.getItem('currentUser')) {
       return true;
     } else {
+      this.route.navigate(['landing']);
       return false;
     }
   }
