@@ -30,7 +30,7 @@ import { LandingComponent } from './landing/landing.component';
     LandingComponent
   ],
   imports: [
-    BrowserModule.withServerTransition({appId: 'test-seo-pre'}),
+    BrowserModule,
     FormsModule,
     HttpModule,
     RouterModule.forRoot(AppRoutes.routes)

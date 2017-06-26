@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Meta, Title } from "@angular/platform-browser";
+import {Meta} from '@angular/platform-browser';
 
 @Component({
   selector: 'app-landing',
@@ -8,14 +8,8 @@ import { Meta, Title } from "@angular/platform-browser";
 })
 export class LandingComponent implements OnInit {
 
-  constructor(meta: Meta, title: Title) { 
-  	title.setTitle('My Landing Page');
-
-    meta.addTags([
-      { name: 'author',   content: 'llugovictorino.com'},
-      { name: 'keywords', content: 'angular seo, angular 4 universal, etc'},
-      { name: 'description', content: 'This is my Angular SEO-based App, enjoy it!' }
-    ]);
+  constructor(private metaService: Meta) {
+    this.metaService.addTag({name: 'title', content: 'Luis Lugo Angular 4'});
   }
 
   ngOnInit() {
