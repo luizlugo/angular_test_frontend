@@ -2,14 +2,12 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-import {Routes, RouterModule} from '@angular/router';
-import {LoginGuard} from './login-guard';
-import {NormalUserGuard} from './normal-user-guard';
+import { Routes, RouterModule } from '@angular/router';
+import { LoginGuard } from './login-guard';
+import { NormalUserGuard } from './normal-user-guard';
 import { AppComponent } from './app.component';
-
 // Custom imports
-import {AppRoutes} from './routes';
-import { SliderComponent } from './slider/slider.component';
+import { APP_ROUTES } from './routes';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
@@ -21,7 +19,6 @@ import { LandingComponent } from './landing/landing.component';
 @NgModule({
   declarations: [
     AppComponent,
-    SliderComponent,
     NavBarComponent,
     LoginComponent,
     SignupComponent,
@@ -30,10 +27,10 @@ import { LandingComponent } from './landing/landing.component';
     LandingComponent
   ],
   imports: [
-    BrowserModule.withServerTransition({appId: 'angular-test'}),
+    BrowserModule.withServerTransition({appId: 'ang4-seo'}),
     FormsModule,
     HttpModule,
-    RouterModule.forRoot(AppRoutes.routes)
+    RouterModule.forRoot(APP_ROUTES)
   ],
   providers: [UserService, LoginGuard, NormalUserGuard],
   bootstrap: [AppComponent]

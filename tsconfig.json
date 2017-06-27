@@ -2,7 +2,7 @@
   "compileOnSave": false,
   "compilerOptions": {
     "outDir": "./dist/out-tsc",
-    "baseUrl": "",
+    "baseUrl": "src",
     "sourceMap": true,
     "declaration": false,
     "moduleResolution": "node",
@@ -17,11 +17,13 @@
       "dom"
     ]
   },
-  "angularCompilerOptions": {                         
+  "angularCompilerOptions": {
       "genDir": "./dist/ngfactory",
       "entryModule": "./src/app/app.module#AppModule"
   },
   "exclude": [
-    "./src/app/**/*.spec.ts"
+    "./src/app/**/*.spec.ts",
+    "./node_modules",
+    "e2e"
   ]
 }

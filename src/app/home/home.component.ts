@@ -1,12 +1,12 @@
-import { Component, OnInit } from '@angular/core';
-import {Image} from '../customclass/image';
+import { Component } from '@angular/core';
+import { Image } from '../customclass/image';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent {
   images: Image[];
 
   constructor() {
@@ -19,6 +19,4 @@ export class HomeComponent implements OnInit {
       new Image('Project Six', './assets/img/3.jpg', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur eum quasi sapiente nesciunt? Voluptatibus sit, repellat sequi itaque deserunt, dolores in, nesciunt, illum tempora ex quae? Nihil, dolorem!')
     ];
   }
-
-  ngOnInit() {}
 }

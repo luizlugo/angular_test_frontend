@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import {Meta} from '@angular/platform-browser';
 
 @Component({
@@ -6,13 +6,8 @@ import {Meta} from '@angular/platform-browser';
   templateUrl: './landing.component.html',
   styleUrls: ['./landing.component.css']
 })
-export class LandingComponent implements OnInit {
-
+export class LandingComponent{
   constructor(private metaService: Meta) {
-    this.metaService.addTag({name: 'title', content: 'Luis Lugo Angular 4'});
+    this.metaService.addTag({'name': 'title', 'content': 'Luis Lugo Angular 4'});
   }
-
-  ngOnInit() {
-  }
-
 }
