@@ -30,7 +30,7 @@ import { LandingComponent } from './landing/landing.component';
     LandingComponent
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({appId: 'angular-test'}),
     FormsModule,
     HttpModule,
     RouterModule.forRoot(AppRoutes.routes)
